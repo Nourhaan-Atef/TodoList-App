@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  /* font-family: "Oleo Script", cursive; */
+}
+
+.header {
+  padding: 20px 50px;
+  border-radius: 20px;
+}
+.header h1 {
+  font-family: "Courgette", cursive;
+  font-weight: bold;
+  font-size: 50px;
+  color: #ba1f23;
+  margin: 0;
+}
