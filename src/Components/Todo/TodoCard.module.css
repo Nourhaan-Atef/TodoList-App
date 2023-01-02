@@ -1,0 +1,65 @@
+body {
+  font-family: "Oleo Script", cursive;
+}
+/* Card Styles */
+.card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 190px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+  margin-top: 10px;
+}
+.card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.card h2 {
+  margin: 0;
+
+  color: #ba1f23;
+}
+.card select {
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.card .btns {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 5px;
+}
+.card .btns button {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.card .btns button:first-of-type {
+  background-color: rgb(17, 91, 17);
+  color: #fff;
+}
+.card .btns button:last-of-type {
+  background-color: #ba1f23;
+  color: #fff;
+}
+
+.card p {
+  font-family: "Courgette", cursive;
+  font-weight: bold;
+}
+hr {
+  background-color: rgb(17, 91, 17);
+  width: 150px;
+  margin: 10px auto;
+}

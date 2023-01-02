@@ -1,9 +1,13 @@
 import React, { Fragment } from "react";
-
+import AddForm from "../Components/Add/AddForm";
+import AddItemHeader from "../Components/Add/AddItemHeader";
+import Header from "../Components/Header/Header";
 function AddItem() {
   return (
     <Fragment>
-      <div>Add Item</div>
+      <Header />
+      <AddItemHeader />
+      <AddForm />
     </Fragment>
   );
 }

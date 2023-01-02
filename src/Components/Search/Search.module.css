@@ -1,3 +1,14 @@
-.search{
-    color:#ba1f23 ;
+.search input,
+.inp {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  outline: none;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Courgette", cursive;
+}
+.search input:focus,
+.inp:focus {
+  border-color: #ba1f23;
 }
