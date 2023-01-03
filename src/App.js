@@ -2,38 +2,28 @@ import "./App.css";
 import TodoList from "./Pages/TodoList";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AddItem from "./Pages/AddItem";
-
+import { useState } from "react";
 function App() {
-  const Todos = [
+  const [todo, setTodo] = useState([
     {
       id: 1,
-      title: "Notion",
-      content: "I can use notion to save your thoughts and ideas.",
-      completed: false,
-      priority: "low",
-    },
-    {
-      id: "2",
-      title: "Work",
-      content: "I have to make a todo app in this week.",
-      completed: true,
-      priority: "urgent",
-    },
-    {
-      id: 3,
       title: "Personal",
-      content: "Check out My habits and improve my skills",
-      completed: false,
+      content: "welcom to notion",
       priority: "high",
     },
     {
-      id: 4,
-      title: "Study",
-      content: "I want read about ReactJs",
-      completed: true,
-      priority: "medium",
+      id: 2,
+      title: "Work",
+      content: "we have to work on todo app",
+      priority: "urgent",
     },
-  ];
+    
+  ]);
+  const handleDeleteTodo = (i) => {
+    const deleteTodo = [...todo];
+    deleteTodo.splice(i, 1);
+    setTodo(deleteTodo);
+  };
   return (
     <Router>
       <div className="App container">
@@ -41,9 +31,14 @@ function App() {
           <Route
             path="/TodoList-App"
             exact
-            element={<TodoList Todos={Todos} />}
+            element={
+              <TodoList Todos={todo} handleDeleteTodo={handleDeleteTodo} setTodo={setTodo} />
+            }
           />
-          <Route path="/AddItem" element={<AddItem />} />
+          <Route
+            path="/AddItem"
+            element={<AddItem todo={todo} setTodo={setTodo} />}
+          />
         </Routes>
       </div>
     </Router>

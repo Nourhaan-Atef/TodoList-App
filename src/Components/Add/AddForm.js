@@ -1,22 +1,43 @@
 import React, { Fragment } from "react";
 import styles from "../../Pages/AddItem.module.css";
 import style from "../Search/Search.module.css";
+import { useState } from "react";
 
-function AddForm() {
+function AddForm({ todo, setTodo }) {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [priority, setPriority] = useState("");
+
+  const handleTodo = (e) => {
+    setTodo([...todo, { title, content, priority }]);
+    console.log(todo);
+    e.preventDefault();
+    // alert("Added");
+    return todo;
+  };
+
   return (
     <Fragment>
       <div className="container">
-        <form>
+        <form onSubmit={handleTodo}>
           <div className="row my-3">
             <div className="col-12 p-0">
               <label className="col-lg-1 col-3 p-0">Title</label>
-              <input type="text" className={`${style.inp} col-lg-6 col-9`} />
+              <input
+                type="text"
+                className={`${style.inp} col-lg-6 col-9`}
+                onChange={(e) => setTitle(e.target.value)}
+              />
             </div>
           </div>
           <div className="row my-3">
             <div className="col-12 p-0">
               <label className="col-lg-1 col-3 p-0">Content</label>
-              <input type="text" className={`${style.inp} col-lg-6 col-9`} />
+              <input
+                type="text"
+                className={`${style.inp} col-lg-6 col-9`}
+                onChange={(e) => setContent(e.target.value)}
+              />
             </div>
           </div>
           <div className="row my-3">
@@ -25,8 +46,10 @@ function AddForm() {
               <select
                 name="priorites"
                 id="priorites"
-                className={`${style.inp} col-lg-6 col-9`}
+                className={`${style.inp} col-lg-3 col-md-6 col-9`}
+                onChange={(e) => setPriority(e.target.value)}
               >
+                <option value="">Choose todo priority</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
