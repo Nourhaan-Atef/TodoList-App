@@ -18,7 +18,9 @@ body {
   margin-bottom: 60px;
   color: rgb(17, 91, 17);
 }
-
+.header span {
+  color: #ba1f23;
+}
 label {
   font-size: 20px;
 }
@@ -34,6 +36,22 @@ label {
   background-color: rgb(17, 91, 17);
 }
 
+.added {
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.added p {
+  background-color: rgb(231, 224, 48);
+  padding: 15px 100px;
+  border-radius: 10px;
+  color: #ba1f23;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #ba1f23;
+}
 @media (max-width: 780px) {
   .btn {
     margin-top: 20px;

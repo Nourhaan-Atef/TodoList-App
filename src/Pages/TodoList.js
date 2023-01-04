@@ -6,7 +6,6 @@ import styles from "../Components/Search/Search.module.css";
 import cardStyle from "../Components/Todo/TodoCard.module.css";
 function TodoList({ Todos, handleDeleteTodo, setTodo }) {
   const [search, setSearch] = useState("");
-
   return (
     <Fragment>
       <Header />
@@ -31,12 +30,12 @@ function TodoList({ Todos, handleDeleteTodo, setTodo }) {
             return search.toLowerCase() === ""
               ? todo
               : todo.title.toLowerCase().includes(search);
-          }).map((el, index) => {
+          }).map((el) => {
             return (
               // Todos
               <div
                 className="col-lg-3 col-md-6 col-12 "
-                key={index}
+                key={el.id}
                 value={Todos}
               >
                 <div className={cardStyle.card}>
@@ -59,7 +58,9 @@ function TodoList({ Todos, handleDeleteTodo, setTodo }) {
                   <p>{el.content}</p>
                   <div className={cardStyle.btns}>
                     <button>modify</button>
-                    <button onClick={handleDeleteTodo}>Delete</button>
+                    <button onClick={() => handleDeleteTodo(el.id)}>
+                      Delete
+                    </button>
                   </div>
                 </div>
               </div>

@@ -17,12 +17,10 @@ function App() {
       content: "we have to work on todo app",
       priority: "urgent",
     },
-    
   ]);
-  const handleDeleteTodo = (i) => {
-    const deleteTodo = [...todo];
-    deleteTodo.splice(i, 1);
-    setTodo(deleteTodo);
+  const handleDeleteTodo = (id) => {
+    const newTodo = todo.filter((todo) => id !== todo.id);
+    setTodo(newTodo);
   };
   return (
     <Router>
@@ -32,7 +30,11 @@ function App() {
             path="/TodoList-App"
             exact
             element={
-              <TodoList Todos={todo} handleDeleteTodo={handleDeleteTodo} setTodo={setTodo} />
+              <TodoList
+                Todos={todo}
+                handleDeleteTodo={handleDeleteTodo}
+                setTodo={setTodo}
+              />
             }
           />
           <Route

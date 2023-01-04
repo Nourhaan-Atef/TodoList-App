@@ -7,13 +7,15 @@ function AddForm({ todo, setTodo }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [priority, setPriority] = useState("");
-
+  const [added, setAdded] = useState(false);
   const handleTodo = (e) => {
     e.preventDefault();
-    setTodo([...todo, { title, content, priority }]);
+    setTodo([...todo, { id: Date.now().toString(), title, content, priority }]);
     setTitle("");
     setContent("");
     setPriority("");
+    setAdded(true);
+    console.log(todo);
     return todo;
   };
 
@@ -61,9 +63,17 @@ function AddForm({ todo, setTodo }) {
               </select>
             </div>
           </div>
+
           <div className={styles.addBtn}>
             <button className={styles.add}>ADD</button>
           </div>
+          {added ? (
+            <div className={styles.added}>
+              <p>Added</p>
+            </div>
+          ) : (
+            ""
+          )}  
         </form>
       </div>
     </Fragment>

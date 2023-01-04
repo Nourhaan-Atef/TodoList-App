@@ -9,10 +9,12 @@ function AddItemHeader() {
       <div className="container">
         <div className="row">
           <div className="head col-lg-8 col-md-8 col-6">
-            <h2 className={styles.header}>ADD An Item </h2>
+            <h2 className={styles.header}>
+              ADDING TODO <span>:)</span>
+            </h2>
           </div>
           <NavLink to="/TodoList-App" className="col-lg-4 col-md-4 col-6">
-            <AddItemBtn btntype=" Back To Todo List"  />
+            <AddItemBtn btntype=" Back To Todo List" />
           </NavLink>
         </div>
       </div>
