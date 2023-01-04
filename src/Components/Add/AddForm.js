@@ -9,10 +9,11 @@ function AddForm({ todo, setTodo }) {
   const [priority, setPriority] = useState("");
 
   const handleTodo = (e) => {
-    setTodo([...todo, { title, content, priority }]);
-    console.log(todo);
     e.preventDefault();
-    // alert("Added");
+    setTodo([...todo, { title, content, priority }]);
+    setTitle("");
+    setContent("");
+    setPriority("");
     return todo;
   };
 
@@ -27,6 +28,7 @@ function AddForm({ todo, setTodo }) {
                 type="text"
                 className={`${style.inp} col-lg-6 col-9`}
                 onChange={(e) => setTitle(e.target.value)}
+                value={title}
               />
             </div>
           </div>
@@ -37,6 +39,7 @@ function AddForm({ todo, setTodo }) {
                 type="text"
                 className={`${style.inp} col-lg-6 col-9`}
                 onChange={(e) => setContent(e.target.value)}
+                value={content}
               />
             </div>
           </div>
@@ -48,6 +51,7 @@ function AddForm({ todo, setTodo }) {
                 id="priorites"
                 className={`${style.inp} col-lg-3 col-md-6 col-9`}
                 onChange={(e) => setPriority(e.target.value)}
+                value={priority}
               >
                 <option value="">Choose todo priority</option>
                 <option value="low">Low</option>

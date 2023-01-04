@@ -34,7 +34,6 @@ label {
   background-color: rgb(17, 91, 17);
 }
 
-
 @media (max-width: 780px) {
   .btn {
     margin-top: 20px;
