@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
-import AddItemBtn from "../Components/Add/Btn";
-import Header from "../Components/Header/Header";
-import styles from "../Components/Search/Search.module.css";
-import cardStyle from "../Components/Todo/TodoCard.module.css";
+import AddItemBtn from "../Components/Btn";
+import Header from "../Components/Header";
+import styles from "../Styles/Search.module.css";
+import cardStyle from "../Styles/TodoCard.module.css";
 function TodoList({ Todos, handleDeleteTodo, setTodo }) {
   const [search, setSearch] = useState("");
   return (

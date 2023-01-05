@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-import styles from "../../Pages/AddItem.module.css";
+import styles from "../Styles/AddItem.module.css";
 import AddItemBtn from "./Btn";
 
 function AddItemHeader() {

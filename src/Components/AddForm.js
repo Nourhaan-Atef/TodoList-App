@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import styles from "../../Pages/AddItem.module.css";
-import style from "../Search/Search.module.css";
+import styles from "../Styles/AddItem.module.css";
+import style from "../Styles/Search.module.css";
 import { useState } from "react";
 
 function AddForm({ todo, setTodo }) {
@@ -73,7 +73,7 @@ function AddForm({ todo, setTodo }) {
             </div>
           ) : (
             ""
-          )}  
+          )}
         </form>
       </div>
     </Fragment>

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import styles from "./Header.module.css";
-import Pin from "../../assets/pin.png";
+import styles from "../Styles/Header.module.css";
+import Pin from "../assets/pin.png";
 
 function Header() {
   return (

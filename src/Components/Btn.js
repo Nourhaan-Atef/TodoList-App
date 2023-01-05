@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import styles from "../../Pages/AddItem.module.css";
+import styles from "../Styles/AddItem.module.css";
 function AddItemBtn({ btntype }) {
   return (
     <Fragment>
