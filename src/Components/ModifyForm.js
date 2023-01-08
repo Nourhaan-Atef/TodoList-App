@@ -3,26 +3,26 @@ import styles from "../Styles/AddItem.module.css";
 import style from "../Styles/Search.module.css";
 import { useState } from "react";
 
-function AddForm({ todo, setTodo }) {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [priority, setPriority] = useState("");
-  const [added, setAdded] = useState(false);
-  const handleTodo = (e) => {
+function ModifyForm({ todos, todo, setTodo }) {
+  // const id = todo.id;
+  const [title, setTitle] = useState(todo[0].title);
+  const [content, setContent] = useState(todo[0].content);
+  const [priority, setPriority] = useState(todo[0].priority);
+  const [modified, setmodified] = useState(false);
+  // console.log(todo);
+
+  const handleModifyTodo = (e) => {
     e.preventDefault();
-    setTodo([...todo, { id: Date.now().toString(), title, content, priority }]);
-    setTitle("");
-    setContent("");
-    setPriority("");
-    setAdded(true);
-    console.log(todo);
-    return todo;
+    setTodo([...todos, { id: todo[0].id, title, content, priority }]);
+    setmodified(true);
+    // console.log(todo); 
+    return todos;
   };
 
   return (
     <Fragment>
       <div className="container">
-        <form onSubmit={handleTodo}>
+        <form onSubmit={handleModifyTodo}>
           <div className="row my-3">
             <div className="col-12 p-0">
               <label className="col-lg-1 col-3 p-0">Title</label>
@@ -68,11 +68,11 @@ function AddForm({ todo, setTodo }) {
           </div>
 
           <div className={styles.addBtn}>
-            <button className={styles.add}>ADD</button>
+            <button className={styles.add}>Modified</button>
           </div>
-          {added ? (
+          {modified ? (
             <div className={styles.added}>
-              <p>Successfully Added</p>
+              <p>Modified Done</p>
             </div>
           ) : (
             ""
@@ -83,4 +83,4 @@ function AddForm({ todo, setTodo }) {
   );
 }
 
-export default AddForm;
+export default ModifyForm;

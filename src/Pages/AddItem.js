@@ -7,7 +7,7 @@ function AddItem({ todo, setTodo }) {
   return (
     <Fragment>
       <Header />
-      <AddItemHeader />
+      <AddItemHeader name="Adding Todo" />
       <AddForm todo={todo} setTodo={setTodo} />
     </Fragment>
   );

@@ -4,7 +4,7 @@ import AddItemBtn from "../Components/Btn";
 import Header from "../Components/Header";
 import styles from "../Styles/Search.module.css";
 import cardStyle from "../Styles/TodoCard.module.css";
-function TodoList({ Todos, handleDeleteTodo, setTodo }) {
+function TodoList({ Todos, handleDeleteTodo, getCertainTodo }) {
   const [search, setSearch] = useState("");
   return (
     <Fragment>
@@ -24,6 +24,7 @@ function TodoList({ Todos, handleDeleteTodo, setTodo }) {
           </NavLink>
         </div>
       </div>
+
       <div className="container">
         <div className="row">
           {Todos.filter((todo) => {
@@ -57,7 +58,11 @@ function TodoList({ Todos, handleDeleteTodo, setTodo }) {
                   <hr />
                   <p>{el.content}</p>
                   <div className={cardStyle.btns}>
-                    <button>modify</button>
+                    <NavLink to="/Modify">
+                      <button onClick={() => getCertainTodo(el.id)}>
+                        modify
+                      </button>
+                    </NavLink>
                     <button onClick={() => handleDeleteTodo(el.id)}>
                       Delete
                     </button>
